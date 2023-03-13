@@ -1,0 +1,6 @@
+wheel
+setuptools
+django<4
+djangorestframework
+django-cors-headers
+black
