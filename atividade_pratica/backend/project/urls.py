@@ -18,9 +18,9 @@ from django.urls import path, include
 
 from apps.livros.api import routers
 
-api_routers = routers.livro_router.urls + routers.editora_router.urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(api_routers)),
+    path("api/", include(routers.livro_router.urls)),
+    path("api/", include(routers.editora_router.urls)),
 ]
