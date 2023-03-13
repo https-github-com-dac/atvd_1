@@ -1,12 +1,27 @@
 1)  Qual a diferença entre image e container?
 
+
+
 2)  Qual a diferença entre os comandos COPY, EXPOSE e ADD?
 
+
 3)  Qual a diferença entre os comandos RUN, CMD e ENTRYPOINT?
+
 O ENTRYPOINT é um cocmando que é sempre executado quando o container inicia.
 O CMD é um argumento padrão(default) para o ENTRYPOINT, caso não passemos nada no docker run, o CMD então é acionado
 RUN permite executar comandos dentro da sua imagem do Docker.
 
 4)  Qual a diferença entre as estratégias de shell e exec?
 
+Docker shell permite que seja possivel entrar no sistema operacional da instancia para navegar livremente no mesmo,
+assim como é feito em um terminal linux, permitindo que seja possivel executar comandos. Enquanto que o exec já executa
+diretamente algum comando dentro da instancia, sem precisar adentrar no sistema operacional convidado, essa abordagem é
+mais utilizada para comandos simples, enquanto que para operações mais complexas, onde é necessario navegar primeiro na
+lista de diretorios do sistema operacional convidado (a instancia), a estrategia de shell seria mais utilizada nesse caso.
+
 5)  Qual a diferença entre os comandos docker stop <container_id> e docker kill <container_id>?
+
+"docker stop" é utilizado para finalizar o processo que está rodando de forma segura, finalizando cada subprocesso que esteja
+sendo utilizado até que seja finalizado o processo principal, dando uma margem de tempo para que operações pendentes sejam
+finalizadas, enquanto que o "docker kill" termina todos os processos, incluindo o principal, imediatamente, nao se importanto
+se ainda existem operações pendentes.
