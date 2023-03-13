@@ -1,0 +1,12 @@
+1)    Qual a diferença entre image e container?
+
+2)    Qual a diferença entre os comandos COPY, EXPOSE e ADD?
+
+3)    Qual a diferença entre os comandos RUN, CMD e ENTRYPOINT?
+O ENTRYPOINT especifica um comando que sempre será executado quando o contêiner for iniciado.
+O CMD deve ser usado como uma maneira de definir argumentos padrão para um comando ENTRYPOINT ou para executar um comando em um contêiner.
+RUN permite executar comandos dentro da sua imagem do Docker.
+
+4)    Qual a diferença entre as estratégias de shell e exec?
+
+5)    Qual a diferença entre os comandos docker stop <container_id> e docker kill <container_id>?
