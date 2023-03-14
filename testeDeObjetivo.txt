@@ -8,6 +8,13 @@ diretamente com o sistema operacional, em um mini ambiente virtual, como se foss
 
 2)  Qual a diferença entre os comandos COPY, EXPOSE e ADD?
 
+COPY suporta apenas o processo de cópia de arquivos locais do sistema operacional host para o convidado (instancia docker), 
+enquanto que ADD suporta também adição de arquivos remotamente através da informação de alguma URL, dentre outras funcionalidades 
+mais avançadas como extração de arquivos na hora da adição.
+
+EXPOSE serve para informar ao Docker que o container atual está disponivel nas portas especificadas em tempo de execução. Ou seja, 
+ele "Expõe", como o proprio nome ja diz, uma aplicação Docker para ser acessivel atraves de uma porta especificada. Também é 
+possivel especificar o protocolo usado, que por padrão é o TCP.
 
 3)  Qual a diferença entre os comandos RUN, CMD e ENTRYPOINT?
 
