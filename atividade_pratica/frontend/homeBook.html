@@ -1,101 +1,220 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Livraria</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+			crossorigin="anonymous"
+		/>
+		<title>Livraria</title>
+	</head>
+	<body>
+		<!-- Application header, navigation bar for searching, category and adding book -->
+		<header class="p-5 text-dark" style="background-color: #edf2f4">
+			<div class="container">
+				<div class="row">
+					<div class="col-4">
+						<div class="dropdown">
+							<button
+								class="btn btn-secondary dropdown-toggle form-control text-start d-flex justify-content-between align-items-center text-bg-light border"
+								type="button"
+								data-bs-toggle="dropdown"
+								aria-expanded="false"
+							>
+								Livro
+							</button>
+							<ul
+								class="dropdown-menu dropdown-menu-light form-control"
+							>
+								<li>
+									<a class="dropdown-item active" href="#"
+										>Livro</a
+									>
+								</li>
+								<li>
+									<a
+										class="dropdown-item"
+										href="./homePubli.html"
+										>Editora</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<span class="input-group-text">
+								<i class="bi bi-search"></i>
+							</span>
+							<input
+								type="text"
+								class="form-control bg-light"
+								placeholder="Pesquisar"
+								id="search-input"
+							/>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="input-group">
+							<span class="input-group-text" id="icon">
+								<i class="bi bi-plus-circle"></i>
+							</span>
+							<input
+								type="button"
+								aria-describedby="icon"
+								class="btn btn-light border form-control"
+								data-bs-toggle="modal"
+								data-bs-target="#exampleModal"
+								value="Cadastrar"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 
-    <!-- Application header, navigation bar for searching, category and adding book -->
-    <header class="p-5 text-dark"  style="background-color: #EDF2F4;">
-        <div class="container">
-            <div class="row">
-                <div class="col-4">
-                    <div class="dropdown ">
-                        <button class="btn btn-secondary dropdown-toggle form-control text-start d-flex justify-content-between align-items-center text-bg-light border" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Livro
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-light form-control">
-                          <li><a class="dropdown-item active" href="#">Livro</a></li>
-                          <li><a class="dropdown-item" href="./homePubli.html">Editora</a></li>
-                        </ul>
-                      </div>
-                </div>
-                <div class="col-4">
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="bi bi-search"></i>
-                        </span>
-                        <input type="text" class="form-control bg-light">
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="input-group">
-                        <span class="input-group-text" id="icon">
-                            <i class="bi bi-plus-circle"></i>
-                        </span>
-                        <input type="button" aria-describedby="icon" class="btn btn-light border form-control" data-bs-toggle="modal" data-bs-target="#exampleModal" value="Cadastrar">
-                    </div>
-                </div>    
-            </div>
-        </div>
-    </header>
+		<!-- Modal to add books -->
+		<div
+			class="modal fade"
+			id="exampleModal"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h1
+							class="modal-title fs-3 text-center"
+							id="exampleModalLabel"
+						>
+							Cadastrar Livro
+						</h1>
 
-    <!-- Modal to add books -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">           
-            <div class="modal-body">       
-                <h1 class="modal-title fs-3 text-center" id="exampleModalLabel">Cadastrar Livro</h1>
-              
-                <form class="mt-4 mb-4">
-                <div class="mb-3">
-                  <label for="recipient-name" class="col-form-label">Nome</label>
-                  <input type="text" class="form-control" id="recipient-name">
-                </div>
-                <div class="mb-3">
-                  <label for="recipient-date" class="col-form-label">Data</label>
-                  <input type="date" class="form-control" id="recipient-date">
-                </div>
-              </form>
+						<form class="mt-4 mb-4">
+							<div class="mb-3">
+								<label
+									for="recipient-name"
+									class="col-form-label"
+									>Nome</label
+								>
+								<input
+									type="text"
+									class="form-control"
+									id="recipient-name"
+								/>
+							</div>
+							<div class="mb-3">
+								<label
+									for="recipient-date"
+									class="col-form-label"
+									>Data</label
+								>
+								<input
+									type="date"
+									class="form-control"
+									id="recipient-date"
+								/>
+							</div>
+						</form>
 
-              <div class="row">
-                <div class="col-6">
-                    <button type="button" class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Cancelar</button>
-                </div>
-                <div class="col-6">
-                    <button type="button" class="btn btn-secondary w-100">Salvar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+						<div class="row">
+							<div class="col-6">
+								<button
+									type="button"
+									class="btn btn-outline-danger w-100"
+									data-bs-dismiss="modal"
+								>
+									Cancelar
+								</button>
+							</div>
+							<div class="col-6">
+								<button
+									type="button"
+									class="btn btn-secondary w-100"
+									onclick="criarLivro()"
+								>
+									Salvar
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-      <section class="container pt-5">
-        <div class="row d-flex justify-content-around" id="row">
+		<section class="container pt-5">
+			<div class="row d-flex justify-content-around" id="row"></div>
+		</section>
 
-        </div>
-      </section>
-    
-    <script>
-        const url = 'http://127.0.0.1:8000/api/livros/'
-        fetch(url).then(response => {
+		<script>
+			const url = "http://127.0.0.1:8000/api/livros/";
 
-            return response.json()
+			const criarLivro = () => {
+				let nome = document.getElementById("recipient-name").value;
+				let data = document.getElementById("recipient-date").value;
 
-        }).then(data => {
+				fetch(url, {
+					method: "POST",
+					headers: {
+						Accept: "application/json",
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						titulo: nome,
+						data_de_lancamento: data,
+					}),
+				});
+			};
 
-            const row = document.getElementById("row")
+			const deletarLivro = (id) => {
+				fetch(url + id, { method: "DELETE" });
+			};
 
-            data.forEach((element) => {
-            const div = document.createElement("div")
-            div.classList.add("col-3", "text-bg-light", "p-2", "pt-3", "rounded", "border")
-                div.innerHTML = `
+			const editarLivro = (id) => {
+				let nome = document.getElementById("recipient-name-edit").value;
+				let data = document.getElementById("recipient-date-edit").value;
+
+				fetch(url + id + "/", {
+					method: "PUT",
+					headers: {
+						Accept: "application/json",
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({
+						titulo: nome,
+						data_de_lancamento: data,
+					}),
+				});
+			};
+
+			const buscarLivros = (urlPraUsar = url) => {
+				fetch(urlPraUsar)
+					.then((response) => {
+						return response.json();
+					})
+					.then((data) => {
+						const row = document.getElementById("row");
+
+						data.forEach((element) => {
+							const div = document.createElement("div");
+							div.classList.add(
+								"col-3",
+								"text-bg-light",
+								"p-2",
+								"pt-3",
+								"rounded",
+								"border"
+							);
+							div.innerHTML = `
                 <!-- Card do livro, com infomação de título e data de lançamento -->
                 <div class="row mb-2">
                     <div class="col-8">
@@ -121,27 +240,27 @@
                 <!-- Modal de edição de informações do livro -->
                 <div class="modal fade" id="update${element.id}" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog">
-                      <div class="modal-content">           
-                        <div class="modal-body">       
+                      <div class="modal-content">
+                        <div class="modal-body">
                             <h1 class="modal-title fs-3 text-center">Editar livro</h1>
-                          
+
                             <form class="mt-4 mb-4">
                             <div class="mb-3">
                               <label for="recipient-name" class="col-form-label">Nome</label>
-                              <input type="text" class="form-control" id="recipient-name" value="${element.titulo}">
+                              <input type="text" class="form-control" id="recipient-name-edit" value="${element.titulo}">
                             </div>
                             <div class="mb-3">
                               <label for="recipient-date" class="col-form-label">Data</label>
-                              <input type="date" class="form-control" id="recipient-date" value="${element.data_de_lancamento}">
+                              <input type="date" class="form-control" id="recipient-date-edit" value="${element.data_de_lancamento}">
                             </div>
                           </form>
-            
+
                           <div class="row">
                             <div class="col-6">
                                 <button type="button" class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Cancelar</button>
                             </div>
                             <div class="col-6">
-                                <button type="button" class="btn btn-secondary w-100">Salvar</button>
+                                <button type="button" class="btn btn-secondary w-100" onclick="editarLivro(${element.id})">Salvar</button>
                             </div>
                           </div>
                         </div>
@@ -152,16 +271,16 @@
                   <!-- Modal para deletar livro presente na api -->
                   <div class="modal fade" id="delete${element.id}" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog">
-                      <div class="modal-content">           
-                        <div class="modal-body p-4">       
+                      <div class="modal-content">
+                        <div class="modal-body p-4">
                             <h1 class="modal-title fs-3 text-center mb-4">tem certeza que deseja deletar?</h1>
-            
+
                           <div class="row">
                             <div class="col-6">
                                 <button type="button" class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Cancelar</button>
                             </div>
                             <div class="col-6">
-                                <button type="button" class="btn btn-secondary w-100">Deletar</button>
+                                <button type="button" class="btn btn-secondary w-100" onclick="deletarLivro(${element.id})">Deletar</button>
                             </div>
                           </div>
                         </div>
@@ -169,12 +288,32 @@
                     </div>
                   </div>
                 `;
-            row.appendChild(div)
-            })
-        }).catch((err) => {
-            console.log(`Erro: ${err}`)
-        })
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
+							row.appendChild(div);
+						});
+					})
+					.catch((err) => {
+						console.log(`Erro: ${err}`);
+					});
+			};
+
+			document
+				.getElementById("search-input")
+				.addEventListener("keyup", () => {
+					document.getElementById("row").innerHTML = "";
+					// TODO: bug que quando seleciona tudo bem rapido e apaga de uma vez (ja tendo digitado algo) aí ele volta mas populando tudo
+					buscarLivros(
+						url +
+							"?titulo=" +
+							document.getElementById("search-input").value
+					);
+				});
+
+			buscarLivros();
+		</script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+			crossorigin="anonymous"
+		></script>
+	</body>
 </html>
