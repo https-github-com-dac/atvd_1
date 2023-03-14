@@ -2,5 +2,6 @@ wheel
 setuptools
 django<4
 djangorestframework
+django-filter
 django-cors-headers
 black
