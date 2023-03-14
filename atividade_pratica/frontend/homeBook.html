@@ -76,14 +76,101 @@
         </div>
       </div>
 
-      
+      <section class="container pt-5">
+        <div class="row d-flex justify-content-around" id="row">
+
+        </div>
+      </section>
     
     <script>
         const url = 'http://127.0.0.1:8000/api/livros/'
         fetch(url).then(response => {
+
             return response.json()
+
         }).then(data => {
+
+            const row = document.getElementById("row")
+
+            data.forEach((element) => {
+            const div = document.createElement("div")
+            div.classList.add("col-3", "text-bg-light", "p-2", "pt-3", "rounded", "border")
+                div.innerHTML = `
+                <!-- Card do livro, com infomação de título e data de lançamento -->
+                <div class="row mb-2">
+                    <div class="col-8">
+                    <h2 class="fs-5">${element.titulo}</h2>
+                    </div>
+                    <div class="col-4">
+                    <div class="d-flex justify-content-evenly">
+                        <div>
+                        <button class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#update${element.id}">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete${element.id}">
+                                <i class="bi bi-trash3"></i>
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <p class="mb-0 mt-3">Data de Lançamento: ${element.data_de_lancamento}</p>
+
+                <!-- Modal de edição de informações do livro -->
+                <div class="modal fade" id="update${element.id}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">           
+                        <div class="modal-body">       
+                            <h1 class="modal-title fs-3 text-center">Editar livro</h1>
+                          
+                            <form class="mt-4 mb-4">
+                            <div class="mb-3">
+                              <label for="recipient-name" class="col-form-label">Nome</label>
+                              <input type="text" class="form-control" id="recipient-name" value="${element.titulo}">
+                            </div>
+                            <div class="mb-3">
+                              <label for="recipient-date" class="col-form-label">Data</label>
+                              <input type="date" class="form-control" id="recipient-date" value="${element.data_de_lancamento}">
+                            </div>
+                          </form>
             
+                          <div class="row">
+                            <div class="col-6">
+                                <button type="button" class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-secondary w-100">Salvar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Modal para deletar livro presente na api -->
+                  <div class="modal fade" id="delete${element.id}" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">           
+                        <div class="modal-body p-4">       
+                            <h1 class="modal-title fs-3 text-center mb-4">tem certeza que deseja deletar?</h1>
+            
+                          <div class="row">
+                            <div class="col-6">
+                                <button type="button" class="btn btn-outline-danger w-100" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-secondary w-100">Deletar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                `;
+            row.appendChild(div)
+            })
         }).catch((err) => {
             console.log(`Erro: ${err}`)
         })
