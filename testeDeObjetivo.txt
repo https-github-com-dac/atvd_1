@@ -1,8 +1,13 @@
 1)  Qual a diferença entre image e container?
 
-
+A principal diferença entre uma Image e um Container Docker, é que a Imagem representa um template para criação de Containers,
+em outras palavras: É uma arquivo que será utilizado para executar código em um container Docker em forma de instruções sobre como 
+o Container deve ser criado. Enquanto isso, um Container é uma instancia isolada criada à partir de alguma imagem que será utilizada 
+como aplicação. O conceito de "Container" se dá pelo fato de que a aplicação roda de forma isolada, sem interagir diretamente com o sistema 
+operacional, em um mini ambiente virtual, como se fosse uma "caixa", logo, um "container" da vida real.
 
 2)  Qual a diferença entre os comandos COPY, EXPOSE e ADD?
+
 
 
 3)  Qual a diferença entre os comandos RUN, CMD e ENTRYPOINT?
