@@ -7,7 +7,7 @@ from .. import models
 class LivroViewSet(ModelViewSet):
     queryset = models.Livro.objects.all()
     serializer_class = serializers.LivroSerializer
-    filterset_fields = ["title", "data_de_lancamento"]
+    filterset_fields = ["titulo", "data_de_lancamento"]
 
 
 class EditoraViewSet(ModelViewSet):
