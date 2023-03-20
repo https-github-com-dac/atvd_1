@@ -21,6 +21,5 @@ from apps.livros.api import routers
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(routers.livro_router.urls)),
-    path("api/", include(routers.editora_router.urls)),
+    path("api/", include(routers.livro_editora.urls)),
 ]
