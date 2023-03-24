@@ -172,10 +172,12 @@
 						local_de_origem: local,
 					}),
 				});
+				location.reload();
 			};
 
 			const deletarEditora = (id) => {
 				fetch(url + id, { method: "DELETE" });
+				location.reload();
 			};
 
 			const editarEditora = (id) => {
@@ -195,6 +197,7 @@
 						local_de_origem: local,
 					}),
 				});
+				location.reload();
 			};
 
 			const buscarEditora = (urlPraUsar = url) => {

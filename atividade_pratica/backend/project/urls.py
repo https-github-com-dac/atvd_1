@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 from apps.livros.api import routers
-
+from apps.livros.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(routers.livro_editora.urls)),
+    path("livros/", livro_view),
+    path("editoras/", editora_view),
 ]
